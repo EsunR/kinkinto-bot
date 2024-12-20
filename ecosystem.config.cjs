@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = {
   apps: [
     {
-      name: "pi-node-server",
+      name: "kinkinto-bot",
       script:
         "node --experimental-specifier-resolution=node --loader ./loader.js ./dist/serve.js",
       env: {
