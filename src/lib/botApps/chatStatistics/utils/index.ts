@@ -1,23 +1,21 @@
+import { mirai } from "@/instances/mirai"
+import {
+  BotCommandValidResult,
+  BotHelpConfig,
+  CommandErrNoEnum,
+} from "@/types/bot"
+import { validBotCommand } from "@/utils/bot"
 import {
   GroupPermission,
   IMessageChain,
   ISourceMessage,
 } from "mirai-http-sdk-ts"
-import { mirai } from "@/instances/mirai"
 import moment from "moment"
 import {
-  ChatStatTopInfo,
-  IDiffTime,
-  Message,
-  StatisticsInfo,
-} from "../types"
-import { GroupChatInstance } from "../model/GroupChat"
-import {
-  CommandErrNoEnum,
-  BotCommandValidResult,
-  BotHelpConfig,
-} from "@/types/bot"
-import { validBotCommand } from "@/utils/bot"
+  GroupChatCreationAttributes,
+  GroupChatInstance,
+} from "../model/GroupChat"
+import { ChatStatTopInfo, IDiffTime, StatisticsInfo } from "../types"
 
 interface IGroupMemberInfo {
   uid: number
@@ -69,7 +67,7 @@ export function isValidChatStatCommand(
         result: false,
         errno: CommandErrNoEnum.unparsable,
         // eslint-disable-next-line prettier/prettier
-        errMsg: "设置定值只能为\"on\"或者\"off\"",
+        errMsg: '设置定值只能为"on"或者"off"',
       }
     }
   }
@@ -309,7 +307,9 @@ export async function formatRecallMessage2QQ(
  * @param message
  * @returns
  */
-export function getFirstMeetMessageChain(message: Message): IMessageChain[] {
+export function getFirstMeetMessageChain(
+  message: GroupChatCreationAttributes
+): IMessageChain[] {
   return [
     {
       type: "At",
@@ -324,7 +324,7 @@ export function getFirstMeetMessageChain(message: Message): IMessageChain[] {
 }
 
 export function getLongTimeNoSpeechMessageChain(
-  message: Message,
+  message: GroupChatCreationAttributes,
   diffTime: IDiffTime
 ): IMessageChain[] {
   return [

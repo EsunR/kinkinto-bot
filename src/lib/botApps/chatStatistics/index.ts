@@ -9,6 +9,7 @@ import { miraiLogger } from "@/utils/log"
 import Mirai, {
   IGroupMessage,
   IMessageChain,
+  IQuoteMessage,
   ISourceMessage,
 } from "mirai-http-sdk-ts"
 import { getMessagePlantText } from "mirai-http-sdk-ts/dist/utils"
@@ -17,17 +18,17 @@ import { scheduleJob } from "node-schedule"
 import { Op, Sequelize } from "sequelize"
 import { helpConfig } from "./config"
 import {
-  createGroupChatModel,
   GroupChatCreationAttributes,
   GroupChatInstance,
+  createGroupChatModel,
 } from "./model/GroupChat"
 import {
-  createGroupConfigModel,
   GroupConfigFieldEnum,
+  createGroupConfigModel,
 } from "./model/GroupConfig"
 import {
-  ChatStatisticsEvent,
   ChatStatTopInfo,
+  ChatStatisticsEvent,
   MeetLongTimeNoSpeechMemberFn,
   MeetNewMemberFn,
   Option,
@@ -350,11 +351,7 @@ export default class ChatStatistician {
     // Step2. 存储聊天记录
     const quoteMessage = groupMessage.messageChain.find(
       (item) => item.type === "Quote"
-    )
-    console.log(
-      "🚀 ~ ChatStatistician ~ receiveMessage ~ quoteMessage:",
-      quoteMessage
-    )
+    ) as IQuoteMessage
     const message: GroupChatCreationAttributes = {
       id:
         (
