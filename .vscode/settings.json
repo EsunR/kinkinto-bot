@@ -1,0 +1,13 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.tabSize": 2,
+    "cSpell.words": [
+        "awtrix",
+        "Caiyun",
+        "chatstat",
+        "fiveminute",
+        "lolicon",
+        "Temporaryapp",
+        "Vnstat"
+    ]
+}
