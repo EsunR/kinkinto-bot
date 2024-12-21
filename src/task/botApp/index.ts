@@ -6,7 +6,7 @@ import { useMiraControlTask } from "./miraControlTask"
 import { useRemindTask } from "./remindTask"
 import { useUpdaterTask } from "./updaterTask"
 
-export default async function startMiraiTask() {
+export default async function startBotAppTask() {
   try {
     // 聊天统计
     const chatStatisticians = await getChatStatisticians()

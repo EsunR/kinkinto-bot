@@ -1,9 +1,9 @@
-import startMiraiTask from "./mirai"
+import startBotAppTask from "./botApp"
 import startV2rayTask from "./v2ray"
 import startCleanTask from "./clean"
 
 export default function startTask() {
-  startMiraiTask()
+  startBotAppTask()
   startV2rayTask()
   startCleanTask()
 }

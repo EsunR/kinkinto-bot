@@ -44,6 +44,9 @@ importers:
       koa-static:
         specifier: ^5.0.0
         version: 5.0.0
+      koishi:
+        specifier: ^4.18.3
+        version: 4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)
       log4js:
         specifier: ^6.4.6
         version: 6.9.1
@@ -161,6 +164,45 @@ packages:
     resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
     engines: {node: '>=6.9.0'}
 
+  '@cordisjs/core@3.18.1':
+    resolution: {integrity: sha512-yRuATOamFxeD1ztE2L3o1SaHuT2zw5DTXijQYxt9azVNeILbvtomfGG6sLZegrynJO9XZbNvXbOlQ7LBJDOlAg==}
+
+  '@cordisjs/loader@0.13.1':
+    resolution: {integrity: sha512-YGw22gT1F/jXT1UeWMjIavt7WHMfEmKve83v4PTg63SW4eC2s89ivsN4RQWi5YWe0LQNNg8LItL66FeEcgQS5w==}
+    peerDependencies:
+      '@cordisjs/core': ^3.18.1
+
+  '@cordisjs/logger@0.3.3':
+    resolution: {integrity: sha512-UcyZRXAL86YLAEEta+fxJM1CcDanJvoIMD9ywCyP2AZJuib68UynENGTFo4mYkeg+8WMXrlA/aNNwENMiLUlXA==}
+    peerDependencies:
+      '@cordisjs/core': ^3.17.1
+
+  '@cordisjs/plugin-http@0.6.3':
+    resolution: {integrity: sha512-kmw4G1t39ZZzFGpBKUNuTv2aefEUtxa1e4qu4+bTrM5Z8uYHTRzPpyJfkj9zuZwopP/Vz271OUr2UfDN5lrJKQ==}
+    peerDependencies:
+      cordis: ^3.18.1
+
+  '@cordisjs/plugin-proxy-agent@0.3.3':
+    resolution: {integrity: sha512-iOM44+bducWGdfF/eD+dH7Fhi3r5eBZqSNIXvfUjK9z0tZ06oeVk/655nAlNxff31umUXhgmRQ14KwG+ylggcQ==}
+    peerDependencies:
+      '@cordisjs/plugin-http': ^0.6.0
+      cordis: ^3.17.4
+
+  '@cordisjs/plugin-server@0.2.4':
+    resolution: {integrity: sha512-XTULwrHW8i36KjkY1L7WA3suUdYXwQCGGwusN7IxZROJapkSLqgst4tmiHLZOaQ2YnUMCYFw1FlkcJaJlaKxew==}
+    peerDependencies:
+      cordis: ^3.18.1
+
+  '@cordisjs/schema@0.1.1':
+    resolution: {integrity: sha512-AYTSyEXEASO6uVHqXBHIId+8OGFs0idtFoj3q7qee9J7OGcMjVEUsrsdiP9SnmzTR4ea17esShledUC50fco1g==}
+    peerDependencies:
+      '@cordisjs/core': ^3.17.0
+
+  '@cordisjs/timer@0.3.2':
+    resolution: {integrity: sha512-frdIvc+1AqKVHMWnNacqqZ2Cm52FfoYKPpBQ+kZgr/cFs7HXDKqetL35CLy/EZAF22l/6VTvpQOYUwS6tvVJZA==}
+    peerDependencies:
+      '@cordisjs/core': ^3.12.0
+
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
@@ -185,6 +227,9 @@ packages:
 
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
+
+  '@hapi/bourne@3.0.0':
+    resolution: {integrity: sha512-Waj1cwPXJDucOib4a3bAISsKJVb15MKi9IvmTI/7ssVEm6sywXGjVJDhl6/umt1pK1ZS7PacXU3A1PmFKHEZ2w==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -228,6 +273,40 @@ packages:
     resolution: {integrity: sha512-WPXQUaAeAMVaLTEFpoq3T2O1C+FstkjJnDQqy95Ck1UdILajsRhu6mhJ8H2f4NFPRBoCNN+qywTJfq/gGki5mw==}
     engines: {node: '>= 8.0.0'}
 
+  '@koa/router@10.1.1':
+    resolution: {integrity: sha512-ORNjq5z4EmQPriKbR0ER3k4Gh7YGNhWDL7JBW+8wXDrHLbWYKYSJaOJ9aN06npF5tbTxe2JBOsurpJDAvjiXKw==}
+    engines: {node: '>= 8.0.0'}
+    deprecated: '**IMPORTANT 10x+ PERFORMANCE UPGRADE**: Please upgrade to v12.0.1+ as we have fixed an issue with debuglog causing 10x slower router benchmark performance, see https://github.com/koajs/router/pull/173'
+
+  '@koishijs/core@4.18.3':
+    resolution: {integrity: sha512-KTgGQoaKpBobyUGOVgzdgU7LlVJ+gbxPRDDFJFqakHjewJx2RmNagwx/Tlk5OwoywwftjCgnyZ1mOrf7ES/M1w==}
+
+  '@koishijs/i18n-utils@1.0.1':
+    resolution: {integrity: sha512-N58UAnhMMtqS4+VGW5IwJ6U9xwXZpzrcPaJrdEBzUJ4yBKKrkHfG1ck9tvQ99SnzxhZGGcBa/SKWnHQf/omrvg==}
+
+  '@koishijs/loader@4.6.3':
+    resolution: {integrity: sha512-UlWkA9TCi0juc1i4ax5pz4CUAoJd/t6tbWuTCEr2Jc/VrPlIH6hYc3MkTOR8GO5FyIV5GWFMI8CGvtGzHXDoYw==}
+    peerDependencies:
+      '@koishijs/core': 4.18.3
+
+  '@koishijs/plugin-http@0.6.3':
+    resolution: {integrity: sha512-alw51yjc6bykgZD2EsbTn03Yjwp9Mkidb1BsQn25SDwaBQqla0bZAVivFxNW1J60lneP9uymu3EUnPspvBuxog==}
+    peerDependencies:
+      koishi: ^4.18.0
+
+  '@koishijs/plugin-proxy-agent@0.3.3':
+    resolution: {integrity: sha512-pOpsHNVn3RVpPwdQjHNBRFsuq02sAS5NRVSuWWSHBPwIQ+QWu5232Au9RVH/DHBvx6XLWOm+WePMo4gRaxsVgg==}
+    peerDependencies:
+      koishi: ^4.17.9
+
+  '@koishijs/plugin-server@3.2.4':
+    resolution: {integrity: sha512-zzl1FllDgKdPG3eFQvMfaAsQGaBtOEcCG4eU9GtNp+CqBMNIUxGOxR0S6uEBVaKyMyllO1Ms5VgHljkZkbR3Jg==}
+    peerDependencies:
+      koishi: ^4.18.0
+
+  '@koishijs/utils@7.2.1':
+    resolution: {integrity: sha512-c9pqz5zX6M6Lky3F3zIzltm3ogebv03RNZH17bfycjH9wPx9oGt4D6YUgVxKdRKVmDfMfp3X2dC2/Wf5c/WTnA==}
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -257,6 +336,20 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
+  '@satorijs/core@4.3.1':
+    resolution: {integrity: sha512-It6ayNSYqLqCRc7Ga5YA5i6LVvjDC1a1mfsp2nKYoEeGxhfYQ7KZcpUVshmuhOKoPxbosmHB/DYvDjCsQiR14Q==}
+    peerDependencies:
+      cordis: ^3.18.1
+
+  '@satorijs/element@3.1.7':
+    resolution: {integrity: sha512-ZP8tRVuOGNRlIBXKn40przG4FAouTaMt8O3UZ9j0eueS4y7IWxCL08W6BBsPq+0sExeYtGYyBRNt4L9gBx0Q4A==}
+
+  '@satorijs/protocol@1.4.2':
+    resolution: {integrity: sha512-02YnG2aK0VB0E/PCm60lPH5Wn8j66qPDM9gLKkNldz538rlCh6SRrt8M38RFH0CRus6vHFLXhbCKnC23TtW5yQ==}
+
+  '@tokenizer/token@0.3.0':
+    resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
+
   '@tootallnate/once@1.1.2':
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
@@ -284,6 +377,9 @@ packages:
 
   '@types/caseless@0.12.5':
     resolution: {integrity: sha512-hWtVTC2q7hc7xZ/RLbxapMvDMgUnDvKvMOpKal4DrMyfGBUfB1oKaZlIRr6mJL+If3bAP6sV/QneGzF6tJjZDg==}
+
+  '@types/co-body@6.1.3':
+    resolution: {integrity: sha512-UhuhrQ5hclX6UJctv5m4Rfp52AfG9o9+d9/HwjxhVB5NjXxr5t9oKgJxN8xRHgr35oo8meUEHUPFWiKg6y71aA==}
 
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
@@ -345,6 +441,9 @@ packages:
   '@types/koa__cors@3.3.1':
     resolution: {integrity: sha512-aFGYhTFW7651KhmZZ05VG0QZJre7QxBxDj2LF1lf6GA/wSXEfKVAJxiQQWzRV4ZoMzQIO8vJBXKsUcRuvYK9qw==}
 
+  '@types/koa__router@12.0.4':
+    resolution: {integrity: sha512-Y7YBbSmfXZpa/m5UGGzb7XadJIRBRnwNY9cdAojZGp65Cpe5MAP3mOZE7e3bImt8dfKS4UFcR16SLH8L/z7PBw==}
+
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
@@ -395,6 +494,9 @@ packages:
 
   '@types/validator@13.12.2':
     resolution: {integrity: sha512-6SlHBzUW8Jhf3liqrGGXyTJSIFe4nqlJ5A5KaMZ2l/vbM3Wh3KSybots/wfWVzNLK4D1NZluDlSQIbIEPx6oyA==}
+
+  '@types/ws@8.5.13':
+    resolution: {integrity: sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA==}
 
   '@types/yauzl@2.10.3':
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
@@ -667,6 +769,10 @@ packages:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
 
+  cac@6.7.14:
+    resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
+    engines: {node: '>=8'}
+
   cacache@15.3.0:
     resolution: {integrity: sha512-VVdYzXEn+cnbXpFgWs5hTT7OScegHVmLhJIR8Ufqk3iFD6A6j5iSX1KuBTfNEv4tdJWE2PzA6IVFtcLC7fN9wQ==}
     engines: {node: '>= 10'}
@@ -742,6 +848,10 @@ packages:
   co-body@5.2.0:
     resolution: {integrity: sha512-sX/LQ7LqUhgyaxzbe7IqwPeTr2yfpfUIQ/dgpKo6ZI4y4lpQA0YxAomWIY+7I7rHWcG02PG+OuPREzMW/5tszQ==}
 
+  co-body@6.2.0:
+    resolution: {integrity: sha512-Kbpv2Yd1NdL1V/V4cwLVxraHDV6K8ayohr2rmH0J87Er8+zJjcTa6dAn9QMPC9CRgU8+aNajKbSf1TzDB1yKPA==}
+    engines: {node: '>=8.0.0'}
+
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
@@ -789,6 +899,13 @@ packages:
     resolution: {integrity: sha512-TG2hpqe4ELx54QER/S3HQ9SRVnQnGBtKUz5bLQWtYAQ+o6GpgMs6sYUvaiJjVxb+UXwhRhAEP3m7LbsIZ77Hmw==}
     engines: {node: '>= 0.8'}
 
+  cordis@3.18.1:
+    resolution: {integrity: sha512-9IbthFbFBVJ15WBDNPqHdl59TyEAMNWxF1Dxsdi14625ePQkMX35WvcqgGno0BcXlpXDbUaBZgQ+jfBYT+uuSQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      cordis: '*'
+
   core-util-is@1.0.2:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
 
@@ -803,6 +920,9 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  cosmokit@1.6.3:
+    resolution: {integrity: sha512-GBGi7YnwfV7wGnpfeuCPaZ0lqQH82i/1qmzrjMP/uuLlVQc+gc8cqj0YdYbV1ihbSjeeams7DYFSryH0Ju6q9g==}
 
   create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
@@ -958,6 +1078,10 @@ packages:
 
   domutils@3.1.0:
     resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
+
+  dotenv@16.4.7:
+    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
 
   dottie@2.0.6:
     resolution: {integrity: sha512-iGCHkfUc5kFekGiqhe8B/mdaurD+lakO9txNnTvKtA6PISrw86LgqHvRzWYPyoE2Ph5aMIrCw9/uko6XHTKCwA==}
@@ -1168,6 +1292,10 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
+  fastest-levenshtein@1.0.16:
+    resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
+    engines: {node: '>= 4.9.1'}
+
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
@@ -1177,6 +1305,10 @@ packages:
   file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
+
+  file-type@16.5.4:
+    resolution: {integrity: sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==}
+    engines: {node: '>=10'}
 
   file-type@3.9.0:
     resolution: {integrity: sha512-RLoqTXE8/vPmMuTI88DAzhMYC99I8BWv7zYP4A1puo5HIjEJ5EX48ighy4ZyKMG9EDXxBgW6e++cn7d1xuFghA==}
@@ -1487,6 +1619,9 @@ packages:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
 
+  inaba@1.1.1:
+    resolution: {integrity: sha512-VYgrcz9EwjHELNU74R/p81U/G00u8KuFzao43pyNp7UZix+NY78eUzBy1Ks0tSgxgia+luJMvTD67vV02pk9yg==}
+
   indent-string@4.0.0:
     resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
     engines: {node: '>=8'}
@@ -1765,6 +1900,9 @@ packages:
   koa-body@5.0.0:
     resolution: {integrity: sha512-nHwEODrQGiyKBILCWO8QSS40C87cKr2cp3y/Cw8u9Z8w5t0CdSkGm3+y9WK5BIAlPpo9tTw5RtSbxpVyG79vmw==}
 
+  koa-body@6.0.1:
+    resolution: {integrity: sha512-M8ZvMD8r+kPHy28aWP9VxL7kY8oPWA+C7ZgCljrCMeaU7uX6wsIQgDHskyrAr9sw+jqnIXyv4Mlxri5R4InIJg==}
+
   koa-compose@4.1.0:
     resolution: {integrity: sha512-8ODW8TrDuMYvXRwra/Kh7/rJo9BtOfPc6qO8eAfC80CnCvSjSl0bkRM24X6/XBBEyj0v1nRUQ1LyOy3dbqOWXw==}
 
@@ -1804,6 +1942,10 @@ packages:
   koa@2.15.3:
     resolution: {integrity: sha512-j/8tY9j5t+GVMLeioLaxweJiKUayFhlGqNTzf2ZGwL0ZCQijd2RLHK0SLW5Tsko8YyyqCZC2cojIb0/s62qTAg==}
     engines: {node: ^4.8.4 || ^6.10.1 || ^7.10.1 || >= 8.1.4}
+
+  koishi@4.18.3:
+    resolution: {integrity: sha512-aJXoJdXUDLfDiJdxLq5TKOB/0HsdJ7nVPYJk1/FPWAkiccxJAvKUhSguHpgCsRkN2uHwWu+V++u5pcwpNwv18Q==}
+    hasBin: true
 
   lazy-cache@0.2.7:
     resolution: {integrity: sha512-gkX52wvU/R8DVMMt78ATVPFMJqfW8FPz1GZ1sVHBVQHmu/WvhIWE4cE1GBzhJNFicDeYhnwp6Rl35BcAIM3YOQ==}
@@ -2006,6 +2148,11 @@ packages:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
 
+  minato@3.6.1:
+    resolution: {integrity: sha512-4VbFd9TqNUvd/okegSZUaxWZSia5yfNXlfJH/pPxi0HURld5sikGfNh+nvpYfUuAclAt960M7dVG/Z634muzhg==}
+    peerDependencies:
+      cordis: ^3.18.1
+
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
@@ -2157,6 +2304,9 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     deprecated: This package is no longer supported.
 
+  ns-require@1.1.4:
+    resolution: {integrity: sha512-Zk25pQj4u5i6DS0vaNO5aSSXewybVqqVVjz8AOxFy9DNPtmu3jlexMz6kUXLV2oB+X6iQeAnHXSzj5Qz/IeDaQ==}
+
   oauth-sign@0.9.0:
     resolution: {integrity: sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==}
 
@@ -2276,8 +2426,16 @@ packages:
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
+  path-to-regexp@8.2.0:
+    resolution: {integrity: sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==}
+    engines: {node: '>=16'}
+
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
+    engines: {node: '>=8'}
+
+  peek-readable@4.1.0:
+    resolution: {integrity: sha512-ZI3LnwUv5nOGbQzD9c2iDG6toheuXSZP5esSHBjopsXH4dg19soufvpUGA3uohi5anFtGb2lhAVdHzH6R/Evvg==}
     engines: {node: '>=8'}
 
   pend@1.2.0:
@@ -2477,6 +2635,10 @@ packages:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
 
+  readable-web-to-node-stream@3.0.2:
+    resolution: {integrity: sha512-ePeK6cc1EcKLEhJFt/AebMCLL+GgSKhuygrZ/GLaKZYEecIgIECf4UaUuaByiGtzckwR4ain9VzUh95T1exYGw==}
+    engines: {node: '>=8'}
+
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -2491,6 +2653,9 @@ packages:
   regexp.prototype.flags@1.5.3:
     resolution: {integrity: sha512-vqlC04+RQoFalODCbCumG2xIOvapzVMHwsyIGM/SIE8fRhFFsXeH8/QQ+s0T0kDAhKc4k30s73/0ydkHQz6HlQ==}
     engines: {node: '>= 0.4'}
+
+  reggol@1.7.1:
+    resolution: {integrity: sha512-0Vr1vRYDFnsA14BipkHRn3+4FxlZxQJ4VQG2pFE2obSrR68hTHVbbQzS3/ZAHNb6l/+ThaJrc5BPgrYDM3yNyg==}
 
   remark-parse@10.0.2:
     resolution: {integrity: sha512-3ydxgHa/ZQzG8LvC7jTXccARYDcRld3VfcgIIFs7bI6vbRSxJJmzgLEIIoYKyrfhaY+ujuWaf/PJiMZXoiCXgw==}
@@ -2576,6 +2741,9 @@ packages:
 
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  schemastery@3.14.7:
+    resolution: {integrity: sha512-cpJitV9nHieKOQMHey8j+D/wGbm87q3yQXn+Mg6FkVlVFDVKso7+LDHrQwX1xwHXjw/9P3iHlDnGCUnhMnOXbg==}
 
   semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
@@ -2806,6 +2974,10 @@ packages:
   strip-markdown@5.0.1:
     resolution: {integrity: sha512-IvoKZrXtWAnlEjRfDlT3yRtGRvpX3RSg+nwAHONmshpSCoxgjZV2xX9ZYvEmwupmYobJtws9oDdTwLUu/5PoMQ==}
 
+  strtok3@6.3.0:
+    resolution: {integrity: sha512-fZtbhtvI9I48xDSywd/somNqgUHl2L2cstmXCCif0itOf96jeW18MBSyrLuNicYQVkvpOxkZtkzujiTJ9LW5Jw==}
+    engines: {node: '>=10'}
+
   sucrase@3.35.0:
     resolution: {integrity: sha512-8EbVDiu9iN/nESwxeSxDKe0dunta1GOlHufmSSXxMD2z2/tMZpDMpvXQGsc+ajGo8y2uYUmixaSRUc/QPoQ0GA==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -2818,6 +2990,10 @@ packages:
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
+
+  supports-color@8.1.1:
+    resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
+    engines: {node: '>=10'}
 
   tar-fs@2.1.1:
     resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
@@ -2859,6 +3035,10 @@ packages:
   toidentifier@1.0.1:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
+
+  token-types@4.2.1:
+    resolution: {integrity: sha512-6udB24Q737UD/SDsKAHI9FCRP7Bqc9D/MQUV02ORQg5iskjtLJlZJNdN4kKtcdtwCeWIwIHDGaUsTsCCAa8sFQ==}
+    engines: {node: '>=10'}
 
   toposort-class@1.0.1:
     resolution: {integrity: sha512-OsLcGGbYF3rMjPUf8oKktyvCiUxSbqMMS39m33MAjLTC1DVIH6x3WSt63/M77ihI09+Sdfk1AXvfhCEeUmC7mg==}
@@ -2966,6 +3146,10 @@ packages:
 
   undefsafe@2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
+
+  undici@6.21.0:
+    resolution: {integrity: sha512-BUgJXc752Kou3oOIuU1i+yZZypyZRqNPW0vqoMPl8VaoalSfeR0D8/t4iAS3yirs79SSMTxTag+ZC86uswv+Cw==}
+    engines: {node: '>=18.17'}
 
   unified@10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
@@ -3145,6 +3329,77 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.25.9': {}
 
+  '@cordisjs/core@3.18.1':
+    dependencies:
+      cosmokit: 1.6.3
+
+  '@cordisjs/loader@0.13.1(@cordisjs/core@3.18.1)':
+    dependencies:
+      '@cordisjs/core': 3.18.1
+      cosmokit: 1.6.3
+      dotenv: 16.4.7
+      js-yaml: 4.1.0
+
+  '@cordisjs/logger@0.3.3(@cordisjs/core@3.18.1)':
+    dependencies:
+      '@cordisjs/core': 3.18.1
+      cosmokit: 1.6.3
+      reggol: 1.7.1
+
+  '@cordisjs/plugin-http@0.6.3(cordis@3.18.1)':
+    dependencies:
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+      file-type: 16.5.4
+      mime-db: 1.52.0
+      ws: 8.18.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@cordisjs/plugin-proxy-agent@0.3.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)':
+    dependencies:
+      '@cordisjs/plugin-http': 0.6.3(cordis@3.18.1)
+      cordis: 3.18.1
+      http-proxy-agent: 7.0.2
+      https-proxy-agent: 7.0.6
+      socks: 2.8.3
+      socks-proxy-agent: 8.0.5
+      undici: 6.21.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@cordisjs/plugin-server@0.2.4(cordis@3.18.1)':
+    dependencies:
+      '@koa/router': 10.1.1
+      '@types/koa': 2.15.0
+      '@types/koa__router': 12.0.4
+      '@types/ws': 8.5.13
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+      koa: 2.15.3
+      koa-body: 6.0.1
+      parseurl: 1.3.3
+      path-to-regexp: 6.3.0
+      reggol: 1.7.1
+      schemastery: 3.14.7
+      ws: 8.18.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  '@cordisjs/schema@0.1.1(@cordisjs/core@3.18.1)':
+    dependencies:
+      '@cordisjs/core': 3.18.1
+      cosmokit: 1.6.3
+      schemastery: 3.14.7
+
+  '@cordisjs/timer@0.3.2(@cordisjs/core@3.18.1)':
+    dependencies:
+      '@cordisjs/core': 3.18.1
+      cosmokit: 1.6.3
+
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
@@ -3174,6 +3429,8 @@ snapshots:
 
   '@gar/promisify@1.1.3':
     optional: true
+
+  '@hapi/bourne@3.0.0': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -3222,6 +3479,73 @@ snapshots:
     dependencies:
       vary: 1.1.2
 
+  '@koa/router@10.1.1':
+    dependencies:
+      debug: 4.4.0
+      http-errors: 1.8.1
+      koa-compose: 4.1.0
+      methods: 1.1.2
+      path-to-regexp: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@koishijs/core@4.18.3':
+    dependencies:
+      '@koishijs/i18n-utils': 1.0.1
+      '@koishijs/utils': 7.2.1
+      '@satorijs/core': 4.3.1(cordis@3.18.1)
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+      fastest-levenshtein: 1.0.16
+      minato: 3.6.1(cordis@3.18.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@koishijs/i18n-utils@1.0.1':
+    dependencies:
+      cosmokit: 1.6.3
+
+  '@koishijs/loader@4.6.3(@koishijs/core@4.18.3)':
+    dependencies:
+      '@koishijs/core': 4.18.3
+      dotenv: 16.4.7
+      js-yaml: 4.1.0
+      ns-require: 1.1.4
+
+  '@koishijs/plugin-http@0.6.3(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))':
+    dependencies:
+      '@cordisjs/plugin-http': 0.6.3(cordis@3.18.1)
+      koishi: 4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - cordis
+      - utf-8-validate
+
+  '@koishijs/plugin-proxy-agent@0.3.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))':
+    dependencies:
+      '@cordisjs/plugin-proxy-agent': 0.3.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)
+      koishi: 4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)
+    transitivePeerDependencies:
+      - '@cordisjs/plugin-http'
+      - cordis
+      - supports-color
+
+  '@koishijs/plugin-server@3.2.4(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))':
+    dependencies:
+      '@cordisjs/plugin-server': 0.2.4(cordis@3.18.1)
+      koishi: 4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - cordis
+      - supports-color
+      - utf-8-validate
+
+  '@koishijs/utils@7.2.1':
+    dependencies:
+      cosmokit: 1.6.3
+      inaba: 1.1.1
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -3262,6 +3586,29 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@satorijs/core@4.3.1(cordis@3.18.1)':
+    dependencies:
+      '@cordisjs/plugin-http': 0.6.3(cordis@3.18.1)
+      '@satorijs/element': 3.1.7
+      '@satorijs/protocol': 1.4.2
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+      path-to-regexp: 8.2.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  '@satorijs/element@3.1.7':
+    dependencies:
+      cosmokit: 1.6.3
+
+  '@satorijs/protocol@1.4.2':
+    dependencies:
+      '@satorijs/element': 3.1.7
+      cosmokit: 1.6.3
+
+  '@tokenizer/token@0.3.0': {}
+
   '@tootallnate/once@1.1.2':
     optional: true
 
@@ -3285,6 +3632,11 @@ snapshots:
       '@types/node': 17.0.45
 
   '@types/caseless@0.12.5': {}
+
+  '@types/co-body@6.1.3':
+    dependencies:
+      '@types/node': 18.16.0
+      '@types/qs': 6.9.17
 
   '@types/connect@3.4.38':
     dependencies:
@@ -3374,6 +3726,10 @@ snapshots:
     dependencies:
       '@types/koa': 2.15.0
 
+  '@types/koa__router@12.0.4':
+    dependencies:
+      '@types/koa': 2.15.0
+
   '@types/mdast@3.0.15':
     dependencies:
       '@types/unist': 2.0.11
@@ -3426,6 +3782,10 @@ snapshots:
   '@types/unist@2.0.11': {}
 
   '@types/validator@13.12.2': {}
+
+  '@types/ws@8.5.13':
+    dependencies:
+      '@types/node': 18.16.0
 
   '@types/yauzl@2.10.3':
     dependencies:
@@ -3739,6 +4099,8 @@ snapshots:
 
   bytes@3.1.2: {}
 
+  cac@6.7.14: {}
+
   cacache@15.3.0:
     dependencies:
       '@npmcli/fs': 1.1.1
@@ -3867,6 +4229,14 @@ snapshots:
       raw-body: 2.5.2
       type-is: 1.6.18
 
+  co-body@6.2.0:
+    dependencies:
+      '@hapi/bourne': 3.0.0
+      inflation: 2.1.0
+      qs: 6.13.1
+      raw-body: 2.5.2
+      type-is: 1.6.18
+
   co@4.6.0: {}
 
   color-convert@1.9.3:
@@ -3906,6 +4276,19 @@ snapshots:
       depd: 2.0.0
       keygrip: 1.1.0
 
+  cordis@3.18.1:
+    dependencies:
+      '@cordisjs/core': 3.18.1
+      '@cordisjs/loader': 0.13.1(@cordisjs/core@3.18.1)
+      '@cordisjs/logger': 0.3.3(@cordisjs/core@3.18.1)
+      '@cordisjs/schema': 0.1.1(@cordisjs/core@3.18.1)
+      '@cordisjs/timer': 0.3.2(@cordisjs/core@3.18.1)
+      cac: 6.7.14
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+      kleur: 4.1.5
+      reggol: 1.7.1
+
   core-util-is@1.0.2: {}
 
   core-util-is@1.0.3: {}
@@ -3918,6 +4301,8 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.4.2
+
+  cosmokit@1.6.3: {}
 
   create-require@1.1.1: {}
 
@@ -4055,6 +4440,8 @@ snapshots:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+
+  dotenv@16.4.7: {}
 
   dottie@2.0.6: {}
 
@@ -4327,6 +4714,8 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
+  fastest-levenshtein@1.0.16: {}
+
   fastq@1.17.1:
     dependencies:
       reusify: 1.0.4
@@ -4338,6 +4727,12 @@ snapshots:
   file-entry-cache@6.0.1:
     dependencies:
       flat-cache: 3.2.0
+
+  file-type@16.5.4:
+    dependencies:
+      readable-web-to-node-stream: 3.0.2
+      strtok3: 6.3.0
+      token-types: 4.2.1
 
   file-type@3.9.0: {}
 
@@ -4704,6 +5099,8 @@ snapshots:
 
   imurmurhash@0.1.4: {}
 
+  inaba@1.1.1: {}
+
   indent-string@4.0.0: {}
 
   infer-owner@1.0.4:
@@ -4969,6 +5366,15 @@ snapshots:
       co-body: 5.2.0
       formidable: 2.1.2
 
+  koa-body@6.0.1:
+    dependencies:
+      '@types/co-body': 6.1.3
+      '@types/formidable': 2.0.6
+      '@types/koa': 2.15.0
+      co-body: 6.2.0
+      formidable: 2.1.2
+      zod: 3.23.8
+
   koa-compose@4.1.0: {}
 
   koa-convert@2.0.0:
@@ -5052,6 +5458,24 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+
+  koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1):
+    dependencies:
+      '@koishijs/core': 4.18.3
+      '@koishijs/loader': 4.6.3(@koishijs/core@4.18.3)
+      '@koishijs/plugin-http': 0.6.3(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))
+      '@koishijs/plugin-proxy-agent': 0.3.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))
+      '@koishijs/plugin-server': 3.2.4(cordis@3.18.1)(koishi@4.18.3(@cordisjs/plugin-http@0.6.3(cordis@3.18.1))(cordis@3.18.1))
+      '@koishijs/utils': 7.2.1
+      '@satorijs/core': 4.3.1(cordis@3.18.1)
+      cac: 6.7.14
+      kleur: 4.1.5
+    transitivePeerDependencies:
+      - '@cordisjs/plugin-http'
+      - bufferutil
+      - cordis
+      - supports-color
+      - utf-8-validate
 
   lazy-cache@0.2.7: {}
 
@@ -5340,6 +5764,11 @@ snapshots:
 
   mimic-response@3.1.0: {}
 
+  minato@3.6.1(cordis@3.18.1):
+    dependencies:
+      cordis: 3.18.1
+      cosmokit: 1.6.3
+
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
@@ -5531,6 +5960,8 @@ snapshots:
       set-blocking: 2.0.0
     optional: true
 
+  ns-require@1.1.4: {}
+
   oauth-sign@0.9.0: {}
 
   object-assign@4.1.1: {}
@@ -5661,7 +6092,11 @@ snapshots:
 
   path-to-regexp@6.3.0: {}
 
+  path-to-regexp@8.2.0: {}
+
   path-type@4.0.0: {}
+
+  peek-readable@4.1.0: {}
 
   pend@1.2.0: {}
 
@@ -5876,6 +6311,10 @@ snapshots:
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
 
+  readable-web-to-node-stream@3.0.2:
+    dependencies:
+      readable-stream: 3.6.2
+
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
@@ -5899,6 +6338,12 @@ snapshots:
       define-properties: 1.2.1
       es-errors: 1.3.0
       set-function-name: 2.0.2
+
+  reggol@1.7.1:
+    dependencies:
+      cosmokit: 1.6.3
+      object-inspect: 1.13.3
+      supports-color: 8.1.1
 
   remark-parse@10.0.2:
     dependencies:
@@ -6010,6 +6455,10 @@ snapshots:
       is-regex: 1.2.1
 
   safer-buffer@2.1.2: {}
+
+  schemastery@3.14.7:
+    dependencies:
+      cosmokit: 1.6.3
 
   semver@5.7.2: {}
 
@@ -6275,6 +6724,11 @@ snapshots:
       '@types/unist': 2.0.11
       unified: 10.1.2
 
+  strtok3@6.3.0:
+    dependencies:
+      '@tokenizer/token': 0.3.0
+      peek-readable: 4.1.0
+
   sucrase@3.35.0:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
@@ -6290,6 +6744,10 @@ snapshots:
       has-flag: 3.0.0
 
   supports-color@7.2.0:
+    dependencies:
+      has-flag: 4.0.0
+
+  supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
 
@@ -6352,6 +6810,11 @@ snapshots:
       is-number: 7.0.0
 
   toidentifier@1.0.1: {}
+
+  token-types@4.2.1:
+    dependencies:
+      '@tokenizer/token': 0.3.0
+      ieee754: 1.2.1
 
   toposort-class@1.0.1: {}
 
@@ -6470,6 +6933,8 @@ snapshots:
       through: 2.3.8
 
   undefsafe@2.0.5: {}
+
+  undici@6.21.0: {}
 
   unified@10.1.2:
     dependencies:
